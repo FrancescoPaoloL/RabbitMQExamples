@@ -2,10 +2,15 @@
 RabbitMQ is a message broker that enables communication between different components of an application. It implements the Advanced Message Queuing Protocol (AMQP) and provides a flexible messaging system for building distributed systems.
 This repository contains basic concepts related to RabbitMQ.
 
-- <b>ExchangeRoutingKey</b> <br/>
-An exchange in RabbitMQ plays a vital role in directing messages to queues based on their routing keys. It serves as a distribution mechanism, determining how messages are allocated among the queues. RabbitMQ offers an extension that employs a consistent hashing algorithm for message routing. This algorithm guarantees that messages with identical routing keys consistently reach the same queue, even if the number of queues or consumers changes over time. By utilizing the x-consistent-hash exchange type, you can ensure that messages sharing the same routing key will always be directed to the same queue. The code establishes a connection to a RabbitMQ server, declares queues and an exchange, publishes a large number of messages to the exchange, confirms the successful delivery of each message, waits for a specified period of time, and then evaluates the results.
+- ## ExchangeRoutingKey
+    An exchange in RabbitMQ plays a vital role in directing messages to queues based on their routing keys. It serves as a distribution mechanism, determining how messages are allocated among the queues. RabbitMQ offers an extension that employs a consistent hashing algorithm for message routing; you can install it with: 
 
-- TODO...
+    ```
+    rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
+    ```
+    This algorithm guarantees that messages with identical routing keys consistently reach the same queue, even if the number of queues or consumers changes over time. By utilizing the x-consistent-hash exchange type, you can ensure that messages sharing the same routing key will always be directed to the same queue. The code publishes a large number of messages to the exchange, confirms the successful delivery of each message, waits for a specified period of time, and then evaluates the results.
+
+- #### TODO...
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
