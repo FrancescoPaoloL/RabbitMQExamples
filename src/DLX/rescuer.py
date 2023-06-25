@@ -13,6 +13,6 @@ def rescue_lost_messages(config):
         channel.basic_publish(exchange='', routing_key=queue, body=body)
         method_frame, header_frame, body = channel.basic_get(queue=queue_dlx, auto_ack=True)
 
-    print("Rescue operation completed. Lost messages have been sent back to q.messages.")
+    print(f"Rescue operation completed. Lost messages have been sent back to {queue}")
     consume_messages(channel, queue)
     connection.close()
