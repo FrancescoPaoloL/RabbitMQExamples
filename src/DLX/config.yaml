@@ -1,6 +1,6 @@
 messages_count: 10
 probability: 0.5
 TTL: 20000
-ex_dlx: 'ex.dlx.messages'
-queue: 'q.messages'
-queue_dlx: 'q.dlx.messages'
+ex_dlx: "ex.dlx.messages"
+queue: "q.messages"
+queue_dlx: "q.dlx.messages"

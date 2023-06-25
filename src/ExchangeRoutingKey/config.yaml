@@ -1,8 +1,8 @@
-consistent_hash_exchange_type: x-consistent-hash
-host: 127.0.0.1
-queue_name_1: q.messages1
-queue_name_2: q.messages2
-exchange_name: ex.hash
+consistent_hash_exchange_type: "x-consistent-hash"
+host: "127.0.0.1"
+queue_name_1: "q.messages1"
+queue_name_2: "q.messages2"
+exchange_name: "ex.hash"
 my_routing_key: "1"
 nr_messages: 100000
 timeout: 5

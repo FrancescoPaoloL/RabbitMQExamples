@@ -5,12 +5,12 @@ from rescuer import rescue_lost_messages
 
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    config_path = os.path.join(current_dir, 'config.yaml')
+    config_path = os.path.join(current_dir, "config.yaml")
 
     # print("Current working directory: {}".format(config_path))
     # print("Config file path: {}".format(config_path))
 
-    with open(config_path, 'r') as config_file:
+    with open(config_path, "r") as config_file:
         config = yaml.safe_load(config_file)
 
     send_messages(config)

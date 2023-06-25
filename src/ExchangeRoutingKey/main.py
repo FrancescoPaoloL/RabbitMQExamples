@@ -1,6 +1,7 @@
 import time
 import yaml
 import os
+from config_reader import read_config
 from connection import establish_connection
 from queues import declare_queues
 from exchange import declare_exchange, bind_queues_to_exchange
@@ -16,14 +17,10 @@ def load_config(filename):
 def main():
     config = load_config("config.yaml")
 
-    consistent_hash_exchange_type = config["consistent_hash_exchange_type"]
-    host = config["host"]
-    queue_name_1 = config["queue_name_1"]
-    queue_name_2 = config["queue_name_2"]
-    exchange_name = config["exchange_name"]
-    my_routing_key = config["my_routing_key"]
-    nr_messages = config["nr_messages"]
-    timeout = config["timeout"]
+    consistent_hash_exchange_type, host, \
+    queue_name_1, queue_name_2, \
+    exchange_name, my_routing_key, \
+    nr_messages, timeout = read_config(config)
 
     connection = establish_connection(host)
     with connection:
