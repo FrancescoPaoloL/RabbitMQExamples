@@ -1,3 +1,5 @@
 delay_ms: 5000
-start_datetime: '2023-06-26 21:34:00'
-
+start_datetime: '2023-06-28 21:14:00'
+expiration_ms : 20000
+delayed_exchange: "delayed_exchange"
+delayed_queue: "delayed_queue"
