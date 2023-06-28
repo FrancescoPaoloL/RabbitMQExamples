@@ -22,6 +22,18 @@ This repository contains basic concepts related to RabbitMQ.
     
     In this example, we are simulating the consumption of messages with a time-to-live (TTL) of 20 seconds. We generate 10 messages and randomly assign each message an accept or reject state. The messages are consumed with a delay. After the consumption process, we prompt the user to decide whether they want to rescue the messages in the dead-letter exchange (DLX). If the user chooses to rescue the messages, we move them back to the original queue, where they will be consumed again using the same process as before.
 
+- ## DelayMessage
+    This script sends two messages to the RabbitMQ broker. One message is delayed by a specified delay in milliseconds, while the other message is delayed until the next specified day and hour. 
+    
+    To accomplish this, you need to install the rabbitmq_delayed_message_exchange" plugin by following these steps:
+    
+    ```
+    1. Download the latest ".ez" file from the following URL: https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases. At the time of writing, I placed the latest file in the "other" folder.
+    
+    2. Open a terminal or command prompt and enter the following command: "rabbitmq-plugins enable rabbitmq_delayed_message_exchange --online".
+    ```
+    
+
 - #### TODO...
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
