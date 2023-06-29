@@ -1,4 +1,12 @@
-def read_config(config):
+import os
+import yaml
+
+def read_config(filename):
+    config_dir = os.path.dirname(__file__)
+    file_path = os.path.join(config_dir, filename)
+    with open(file_path, "r") as file:
+        config = yaml.safe_load(file)
+
     # Set default properties if they are not present in the config
     consistent_hash_exchange_type = config.get("consistent_hash_exchange_type", "x-consistent-hash")
     host = config.get("host", "127.0.0.1")

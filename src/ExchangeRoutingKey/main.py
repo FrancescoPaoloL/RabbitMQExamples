@@ -7,20 +7,12 @@ from queues import declare_queues
 from exchange import declare_exchange, bind_queues_to_exchange
 from publish import publish_messages, wait_for_confirmation
 
-def load_config(filename):
-    config_dir = os.path.dirname(__file__)
-    file_path = os.path.join(config_dir, filename)
-    with open(file_path, "r") as file:
-        config = yaml.safe_load(file)
-    return config
 
 def main():
-    config = load_config("config.yaml")
-
     consistent_hash_exchange_type, host, \
     queue_name_1, queue_name_2, \
     exchange_name, my_routing_key, \
-    nr_messages, timeout = read_config(config)
+    nr_messages, timeout = read_config("config.yaml")
 
     connection = establish_connection(host)
     with connection:
