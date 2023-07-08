@@ -33,6 +33,9 @@ This repository contains basic concepts related to RabbitMQ.
     2. Open a terminal or command prompt and enter the following command: "rabbitmq-plugins enable rabbitmq_delayed_message_exchange --online".
     ```
     
+- ## Transactions
+    Transactions in RabbitMQ allow you to group multiple operations into a single atomic unit. This ensures that either all operations within the transaction are successfully processed, or none of them are. Transactions provide message integrity and consistency, especially in the event of failures or errors. In this example, we simulate random errors to demonstrate how transactions work and showcase their benefits.
+
 
 - #### TODO...
 
