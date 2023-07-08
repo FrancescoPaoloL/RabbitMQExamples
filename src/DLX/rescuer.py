@@ -1,11 +1,9 @@
 import pika
 from consume import consume_messages 
 
-def rescue_lost_messages(config):
-    connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
+def rescue_lost_messages(host, queue, queue_dlx):
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host))
     channel = connection.channel()
-    queue = config.get("queue", "q.messages")
-    queue_dlx = config.get("queue_dlx", "q.dlx.messages")
 
     # Consume messages from q.dlx.messages and re-publish them to q.messages
     method_frame, header_frame, body = channel.basic_get(queue=queue_dlx, auto_ack=True)

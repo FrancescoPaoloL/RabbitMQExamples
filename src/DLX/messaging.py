@@ -3,9 +3,7 @@ import random
 from consume import consume_messages
 from config_reader import read_config
 
-def send_messages(config):
-    messages_count, probability, ex_dlx, queue, queue_dlx, TTL = read_config(config)
-
+def send_messages(messages_count, probability, ex_dlx, queue, queue_dlx, TTL):
     messages_to_send = [f"Message {i+1}" for i in range(messages_count)]
 
     connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
