@@ -1,19 +1,28 @@
+from config_reader import read_config
 from producer import Producer
 from consumer import Consumer
 
-producer = Producer('localhost', 'my_queue')
-producer.connect()
+def main():
+    host, probability, queue = read_config("config.yaml")
 
-consumer = Consumer('localhost', 'my_queue')
-consumer.connect()
+    producer = Producer(host, queue)
+    consumer = Consumer(host, queue)
 
-# Produce 100 messages
-for i in range(1, 101):
-    message = f"Message {i}"
-    producer.publish_message(message)
+    # Connect to RabbitMQ
+    producer.connect()
+    consumer.connect()
 
-# Start consuming messages
-consumer.start_consuming()
+    # Produce 100 messages
+    for i in range(1, 101):
+        message = f"Message {i}"
+        producer.publish_message(message, probability)
 
-producer.close_connection()
-consumer.close_connection()
+    # Start consuming messages
+    consumer.start_consuming()
+
+    # Close connections
+    producer.close_connection()
+    consumer.close_connection()
+
+if __name__ == "__main__":
+    main()

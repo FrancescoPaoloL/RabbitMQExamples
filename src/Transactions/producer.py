@@ -13,13 +13,13 @@ class Producer:
         self.channel = self.connection.channel()
         self.channel.queue_declare(queue=self.queue_name)
 
-    def publish_message(self, message):
+    def publish_message(self, message, probability):
         try:
             self.channel.tx_select()  # Start transaction
             self.channel.basic_publish(exchange='', routing_key=self.queue_name, body=message)
             
             # Simulate randomly occurring error
-            if random.random() < 0.5:
+            if random.random() < probability:
                 raise Exception("Random error occurred")
             
             self.channel.tx_commit()  # Commit transaction
