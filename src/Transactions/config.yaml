@@ -1,0 +1,3 @@
+host: localhost
+probability: 0.5
+queue: "transactions_queue"
