@@ -2,6 +2,10 @@
 RabbitMQ is a message broker that enables communication between different components of an application. It implements the Advanced Message Queuing Protocol (AMQP) and provides a flexible messaging system for building distributed systems.
 This repository contains basic concepts related to RabbitMQ.
 
+
+- ## Get Info
+    This code retrieves the RabbitMQ overview, list of queues, and list of exchanges, and prints them in a tabular format using the tabulate library.
+
 - ## ExchangeRoutingKey
     An exchange in RabbitMQ plays a vital role in directing messages to queues based on their routing keys. It serves as a distribution mechanism, determining how messages are allocated among the queues. RabbitMQ offers an extension that employs a consistent hashing algorithm for message routing; you can install it with: 
 
@@ -36,8 +40,6 @@ This repository contains basic concepts related to RabbitMQ.
 - ## Transactions
     Transactions in RabbitMQ allow you to group multiple operations into a single atomic unit. This ensures that either all operations within the transaction are successfully processed, or none of them are. Transactions provide message integrity and consistency, especially in the event of failures or errors. In this example, we simulate random errors to demonstrate how transactions work and showcase their benefits.
 
-
-- #### TODO...
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
