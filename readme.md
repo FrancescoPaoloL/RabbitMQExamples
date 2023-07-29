@@ -53,8 +53,19 @@ pika==1.3.1
 PyYAML==6.0
 ```
 
-## Test coverage
-TODO
+## Test Coverage
+### On DelayMessage
+
+| Name                  | Stmts | Miss | Branch | BrPart | Cover |
+|-----------------------|-------|------|--------|--------|-------|
+| config_reader.py      | 13    | 0    | 0      | 0      | 100%  |
+| config_reader_test.py | 31    | 1    | 4      | 1      | 94%   |
+| datetime_calculator.py| 8     | 8    | 0      | 0      | 0%    |
+| message_publisher.py  | 24    | 24   | 0      | 0      | 0%    |
+| <b>TOTAL</b>     | <b>76</b>  | <b>33</b>| <b>4</b>|<b>1</b>|<b>41%</b>|
+
+todo...
+
 
 ## License
 
